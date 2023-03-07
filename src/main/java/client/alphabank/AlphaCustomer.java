@@ -1,10 +1,9 @@
 package client.alphabank;
 
-public class AlphaCustomer {
+import client.Customer;
 
-    private String name;
-    private String surname;
-    private double balance;
+public class AlphaCustomer extends Customer {
+
     private ALPHA_STATUS status;
     private double bonus;
 

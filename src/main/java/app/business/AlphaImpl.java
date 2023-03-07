@@ -17,8 +17,20 @@ public class AlphaImpl implements Api {
     @Override
     public AlphaCustomer createCustomer(AlphaCustomer alphaCustomer) {
 
-        AlphaCustomerToAppAlphaCustomerMapper mapper = new AlphaCustomerToAppAlphaCustomerMapper();
-        AppAlphaCustomer appAlphaCustomer = mapper.map(alphaCustomer);
+        Mapper<AlphaCustomer> mapper = new Mapper();
+        AppAlphaCustomer appAlphaCustomer = null;
+
+        try
+        {
+            appAlphaCustomer = (AppAlphaCustomer) mapper.map(alphaCustomer);
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex.getMessage());
+        }
+
+//        AlphaCustomerToAppAlphaCustomerMapper mapper = new AlphaCustomerToAppAlphaCustomerMapper();
+//        AppAlphaCustomer appAlphaCustomer = mapper.map(alphaCustomer);
 
         // Could be added to constructor
         AppAlphaCustomer.setCount(AppAlphaCustomer.getCount() + 1);

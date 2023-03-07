@@ -2,12 +2,8 @@ package app.entity;
 
 import client.alphabank.ALPHA_STATUS;
 
-public class AppAlphaCustomer {
+public class AppAlphaCustomer extends AppCustomer {
 
-    private double id;
-    private String onoma;
-    private String epitheto;
-    private double ypoloipo;
     private String katastasi;
     private double bonus;
 

@@ -1,12 +1,8 @@
 package client.winbank;
 
-public class WinCustomer {
+import client.Customer;
 
-    private String name;
-    private String surname;
-    private double balance;
+public class WinCustomer extends Customer {
     private WINBANK_STATUS status;
     private double yellows;
-
-
 }
