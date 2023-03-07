@@ -5,6 +5,12 @@ public class Customer {
     protected String surname;
     protected double balance;
 
+    public Customer(String name, String surname, double balance) {
+        this.name = name;
+        this.surname = surname;
+        this.balance = balance;
+    }
+
     public String getName() {
         return name;
     }
