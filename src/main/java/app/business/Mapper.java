@@ -9,8 +9,10 @@ import client.winbank.WinCustomer;
 
 public class Mapper<T extends Customer> {
 
-    // takes *Customer and converts to *AppCustomer
+    // takes *Customer and converts to App*Customer
     public AppCustomer map(T c) throws Exception {
+
+        // TODO: somehow fix all these castings??
 
         AppCustomer ac = null;
 
@@ -20,10 +22,8 @@ public class Mapper<T extends Customer> {
             ac.setOnoma(c.getName());
             ac.setEpitheto(c.getSurname());
             ac.setYpoloipo(c.getBalance());
-
-            // TODO:
-//            cc.setKatastasi(c.getStatus().toString());
-//            cc.setBonus(c.getBonus());
+            ((AppAlphaCustomer) ac).setKatastasi(((AlphaCustomer) c).getStatus().toString());
+            ((AppAlphaCustomer) ac).setBonus(((AlphaCustomer) c).getBonus());
         }
         else if (c instanceof WinCustomer)
         {
@@ -42,3 +42,7 @@ public class Mapper<T extends Customer> {
         return ac;
     }
 }
+//
+//public class Mapper<T extends AppCustomer> {
+//
+//}

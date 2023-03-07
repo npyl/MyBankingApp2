@@ -20,6 +20,9 @@ public class AlphaImpl implements Api {
         Mapper<AlphaCustomer> mapper = new Mapper();
         AppAlphaCustomer appAlphaCustomer = null;
 
+        // ---------
+        //  MAPPING
+        // ---------
         try
         {
             appAlphaCustomer = (AppAlphaCustomer) mapper.map(alphaCustomer);
@@ -29,17 +32,11 @@ public class AlphaImpl implements Api {
             System.out.println(ex.getMessage());
         }
 
-//        AlphaCustomerToAppAlphaCustomerMapper mapper = new AlphaCustomerToAppAlphaCustomerMapper();
-//        AppAlphaCustomer appAlphaCustomer = mapper.map(alphaCustomer);
-
         // Could be added to constructor
         AppAlphaCustomer.setCount(AppAlphaCustomer.getCount() + 1);
         appAlphaCustomer.setId(AppAlphaCustomer.getCount());
 
         addLogic(appAlphaCustomer);
-
-
-
 
         return null;
     }

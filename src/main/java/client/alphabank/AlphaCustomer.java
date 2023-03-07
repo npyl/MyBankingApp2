@@ -10,4 +10,14 @@ public class AlphaCustomer extends Customer {
     public AlphaCustomer(String name, String surname, double balance) {
         super(name, surname, balance);
     }
+
+    public ALPHA_STATUS getStatus()
+    {
+        return this.status;
+    }
+
+    public double getBonus()
+    {
+        return this.bonus;
+    }
 }

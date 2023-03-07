@@ -7,18 +7,8 @@ public class AppAlphaCustomer extends AppCustomer {
     private String katastasi;
     private double bonus;
 
-
-
     // Belongs to the class
     private static int count;
-
-    public double getId() {
-        return id;
-    }
-
-    public void setId(double id) {
-        this.id = id;
-    }
 
     public String getOnoma() {
         return onoma;
@@ -30,14 +20,6 @@ public class AppAlphaCustomer extends AppCustomer {
 
     public double getYpoloipo() {
         return ypoloipo;
-    }
-
-    public String getKatastasi() {
-        return katastasi;
-    }
-
-    public double getBonus() {
-        return bonus;
     }
 
     public static int getCount() {
@@ -58,6 +40,14 @@ public class AppAlphaCustomer extends AppCustomer {
 
     public void setYpoloipo(double ypoloipo) {
         this.ypoloipo = ypoloipo;
+    }
+
+    public String getKatastasi() {
+        return katastasi;
+    }
+
+    public double getBonus() {
+        return bonus;
     }
 
     public void setKatastasi(String katastasi) {
