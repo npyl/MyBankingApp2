@@ -1,11 +1,17 @@
 package client;
 
+import app.controller.RESTController;
 import client.alphabank.AlphaCustomer;
 import client.alphabank.secutiry.AlphaLoginDetails;
 
-import java.util.HashMap;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.context.annotation.ComponentScan;
 
-public class Client {
+@SpringBootApplication
+@ComponentScan(basePackageClasses = RESTController.class)
+public class ClientApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
 
@@ -18,6 +24,7 @@ public class Client {
 
         AlphaLoginDetails credentials = new AlphaLoginDetails("Alphauser", "Alphapass");
 
+        SpringApplication.run(ClientApplication.class, args);
     }
 
 }
